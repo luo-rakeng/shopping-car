@@ -71,25 +71,22 @@ new Vue ({
         },
         handleChoose: function() {
             var count = 0;
-            var input = document.getElementsByTagName("input")[0];
-            var boonl = false;
+            var bool = false;
             for(var i = 0;i < this.list.length; i++) {              
                 if(this.list[i].choose === "是") {
                     count++;
                 }      
-                if(this.list[i].choose=="否") {
-                    this.list[i].choose="是";
+                if(this.list[i].choose === "否") {
+                    this.list[i].choose = "是";
                 }
             } 
             if(count === this.list.length) {            
-                input.checked = true;
-                boonl = true;
+                bool = true;
             } 
-            if(boonl) {
-                input.checked = false;
-                boonl = false;
+            if(bool) {
+                bool = false;
                 for(var i = 0;i < this.list.length; i++) {              
-                    this.list[i].choose="否";
+                    this.list[i].choose = "否";
                 } 
             }
         }
