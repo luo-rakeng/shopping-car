@@ -55,14 +55,43 @@ new Vue ({
             if(this.list[index].choose=="否") {
                 this.list[index].choose="是";
             } else this.list[index].choose="否" ;
-            
+
+            var count = 0;
+            var input = document.getElementsByTagName("input")[0];
+            for(var i = 0;i < this.list.length; i++) {              
+                if(this.list[i].choose === "是") {
+                    count++;
+                }  
+            }
+            if(count === this.list.length) {
+                input.checked = true;
+            }  else {
+                input.checked = false;
+            }
         },
         handleChoose: function() {
-            for(var i = 0;i < this.list.length; i++) {
+            var count = 0;
+            var input = document.getElementsByTagName("input")[0];
+            var boonl = false;
+            for(var i = 0;i < this.list.length; i++) {              
+                if(this.list[i].choose === "是") {
+                    count++;
+                }      
                 if(this.list[i].choose=="否") {
                     this.list[i].choose="是";
-                } else this.list[i].choose="否" ;
-            }    
+                }
+            } 
+            if(count === this.list.length) {            
+                input.checked = true;
+                boonl = true;
+            } 
+            if(boonl) {
+                input.checked = false;
+                boonl = false;
+                for(var i = 0;i < this.list.length; i++) {              
+                    this.list[i].choose="否";
+                } 
+            }
         }
     }
 })
