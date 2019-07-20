@@ -44,7 +44,7 @@
             </table>
             全选
             <input type="checkbox" @click="handleChoose">
-            <div>总价：￥{{totalPrice}}</div>   <!--computed方法，注意function没加括号-->
+            <div>总价：<span class="total">￥{{totalPrice}}</span></div>   <!--computed方法，注意function没加括号-->
         </template>
         <div v-else>购物车为空</div>
     </div>

@@ -12,3 +12,6 @@ th {
     font-weight: 600;
     white-space: nowrap;  
 }
+.total {
+    color: rgb(255, 50, 0);
+}
